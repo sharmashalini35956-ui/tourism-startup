@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Explore Bharat</title>
+
+<style>
+/* ================= GLOBAL ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* ================= HERO ================= */
+.hero {
+  height: 55vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1548013146-72479768bada") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 48px;
+}
+
+.hero p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact-section {
+  padding: 80px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contact-info h2,
+.contact-form h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.info-box {
+  margin-top: 20px;
+}
+
+.info-box p {
+  margin-bottom: 10px;
+}
+
+/* ================= FORM ================= */
+.contact-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  background: #ff9800;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #e68900;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #1e1e1e;
+  color: #aaa;
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 900px){
+  .contact-section {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Contact Us</h1>
+    <p>Let us help you plan your incredible journey</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+
+  <!-- CONTACT INFO -->
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p>
+      Inspired by the spirit of Incredible India, Explore Bharat is here
+      to help you discover unforgettable destinations and experiences.
+    </p>
+
+    <div class="info-box">
+      <p><strong>📍 Address:</strong> New Delhi, India</p>
+      <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+      <p><strong>✉ Email:</strong> info@explorebharat.com</p>
+      <p><strong>🕒 Working Hours:</strong> Mon – Sat (9 AM – 6 PM)</p>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Your Email">
+      <textarea id="message" placeholder="Your Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Explore Bharat | Inspired by Incredible India</p>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function submitForm(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (name === "" || email === "" || message === "") {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  alert("Thank you, " + name + "! Your message has been sent.");
+  
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
+}
+</script>
+
+</body>
+</html>

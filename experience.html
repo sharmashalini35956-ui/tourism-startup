@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiences | Explore Bharat</title>
+
+<style>
+/* ================= GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI", sans-serif;
+}
+
+body{
+  background:#f9f9f9;
+  color:#333;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:65vh;
+  background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+  url("https://images.unsplash.com/photo-1526772662000-3f88f10405ff") center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:52px;
+}
+
+.hero p{
+  margin-top:12px;
+  font-size:20px;
+}
+
+/* ================= FILTER ================= */
+.filters{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.filters button{
+  padding:12px 25px;
+  margin:10px;
+  border:none;
+  border-radius:25px;
+  background:#ff9800;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.filters button:hover{
+  background:#e68900;
+}
+
+/* ================= EXPERIENCES ================= */
+.experiences{
+  padding:20px 50px 80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:#fff;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  transition:transform .3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:22px;
+}
+
+.card-content h3{
+  color:#ff5722;
+  margin-bottom:8px;
+}
+
+.card-content p{
+  color:#555;
+  font-size:15px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#1e1e1e;
+  color:#aaa;
+  text-align:center;
+  padding:25px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>Indian Experiences</h1>
+    <p>Feel the culture, adventure, spirituality & nature</p>
+  </div>
+</section>
+
+<!-- FILTER BUTTONS -->
+<section class="filters">
+  <button onclick="filterExp('all')">All</button>
+  <button onclick="filterExp('culture')">Cultural</button>
+  <button onclick="filterExp('adventure')">Adventure</button>
+  <button onclick="filterExp('spiritual')">Spiritual</button>
+  <button onclick="filterExp('nature')">Nature</button>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="experiences">
+
+  <div class="card culture">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
+    <div class="card-content">
+      <h3>Cultural Walks</h3>
+      <p>Explore ancient cities, traditions, and heritage sites.</p>
+    </div>
+  </div>
+
+  <div class="card adventure">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+    <div class="card-content">
+      <h3>Himalayan Trekking</h3>
+      <p>Thrilling adventures across majestic mountain trails.</p>
+    </div>
+  </div>
+
+  <div class="card spiritual">
+    <img src="https://images.unsplash.com/photo-1548013146-72479768bada">
+    <div class="card-content">
+      <h3>Spiritual Journeys</h3>
+      <p>Temples, yoga retreats, and inner peace experiences.</p>
+    </div>
+  </div>
+
+  <div class="card nature">
+    <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2">
+    <div class="card-content">
+      <h3>Wildlife Safaris</h3>
+      <p>Experience India’s rich biodiversity and forests.</p>
+    </div>
+  </div>
+
+  <div class="card adventure">
+    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff">
+    <div class="card-content">
+      <h3>Desert Safari</h3>
+      <p>Ride through golden sands and experience desert life.</p>
+    </div>
+  </div>
+
+  <div class="card nature">
+    <img src="https://images.unsplash.com/photo-1600359732071-74d2f7e7b0cb">
+    <div class="card-content">
+      <h3>Backwater Cruises</h3>
+      <p>Relax in Kerala’s peaceful waterways.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Explore Bharat | Inspired by Incredible India</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+function filterExp(type){
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    if(type === 'all' || card.classList.contains(type)){
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+
+</body>
+</html>
